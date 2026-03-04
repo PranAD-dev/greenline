@@ -33,19 +33,19 @@ export default function KPICard({
   const progressRatio = actualAnnualProgress / requiredAnnualProgress;
 
   return (
-    <div className="bg-slate-800 border border-slate-700 rounded-xl p-5 hover:border-slate-600 transition-colors">
+    <div className="bg-[#141414] border border-zinc-800 rounded-xl p-4 hover:border-zinc-700 transition-colors">
       {/* Header */}
-      <div className="flex items-start justify-between mb-4">
-        <div className="flex items-center gap-2.5">
-          <span className="text-xl">{getCategoryIcon(category)}</span>
+      <div className="flex items-start justify-between mb-3">
+        <div className="flex items-center gap-2">
+          <span className="text-lg">{getCategoryIcon(category)}</span>
           <div>
-            <h3 className="text-sm font-semibold text-white leading-tight">{label}</h3>
-            <p className="text-xs text-slate-500 mt-0.5">Target: {deadline}</p>
+            <h3 className="text-sm font-medium text-white leading-tight">{label}</h3>
+            <p className="text-xs text-zinc-500 mt-0.5">Due {deadline}</p>
           </div>
         </div>
         <span
           className={cn(
-            "text-[10px] font-medium px-2 py-0.5 rounded-full border",
+            "text-[10px] font-medium px-2 py-0.5 rounded border",
             getStatusBg(status)
           )}
         >
@@ -55,7 +55,7 @@ export default function KPICard({
 
       {/* Progress bar */}
       <div className="mb-3">
-        <div className="flex justify-between text-xs text-slate-400 mb-1.5">
+        <div className="flex justify-between text-xs text-zinc-500 mb-1.5">
           <span className="font-medium text-white">
             {currentValue.toLocaleString()}
           </span>
@@ -64,15 +64,15 @@ export default function KPICard({
         <Progress
           value={pct}
           className={cn(
-            "h-2",
+            "h-1.5",
             status === "on-track" ? "[&>div]:bg-emerald-500" : "[&>div]:bg-amber-500"
           )}
         />
-        <p className="text-xs text-slate-500 mt-1.5">{unit}</p>
+        <p className="text-xs text-zinc-600 mt-1">{unit}</p>
       </div>
 
       {/* Pace indicator */}
-      <div className="flex items-center gap-1.5 mt-3 pt-3 border-t border-slate-700/50">
+      <div className="flex items-center gap-1.5 pt-3 border-t border-zinc-800">
         <div
           className={cn(
             "flex items-center gap-1 text-xs",
@@ -80,18 +80,18 @@ export default function KPICard({
           )}
         >
           {isAhead ? (
-            <TrendingUp size={12} />
+            <TrendingUp size={11} />
           ) : progressRatio > 0.7 ? (
-            <Minus size={12} />
+            <Minus size={11} />
           ) : (
-            <TrendingDown size={12} />
+            <TrendingDown size={11} />
           )}
           <span className="font-medium">
             {actualAnnualProgress.toFixed(1)}/yr
           </span>
         </div>
-        <span className="text-slate-600 text-xs">vs {requiredAnnualProgress.toFixed(1)}/yr needed</span>
-        <span className="ml-auto text-xs font-semibold text-slate-300">{pct}%</span>
+        <span className="text-zinc-600 text-xs">vs {requiredAnnualProgress.toFixed(1)} needed</span>
+        <span className="ml-auto text-xs font-semibold text-zinc-300">{pct}%</span>
       </div>
     </div>
   );

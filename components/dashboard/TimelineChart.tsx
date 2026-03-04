@@ -31,38 +31,38 @@ const COLORS = {
 
 export default function TimelineChart({ data }: TimelineChartProps) {
   return (
-    <div className="bg-slate-800 border border-slate-700 rounded-xl p-5">
+    <div className="bg-[#141414] border border-zinc-800 rounded-xl p-5">
       <div className="mb-4">
-        <h3 className="text-sm font-semibold text-white">Progress Trajectory</h3>
-        <p className="text-xs text-slate-500 mt-0.5">Actual vs required pace across key targets</p>
+        <h3 className="text-sm font-medium text-white">Progress Trajectory</h3>
+        <p className="text-xs text-zinc-500 mt-0.5">Actual vs required pace across key targets</p>
       </div>
       <ResponsiveContainer width="100%" height={260}>
         <LineChart data={data} margin={{ top: 5, right: 10, left: -20, bottom: 5 }}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
+          <CartesianGrid strokeDasharray="3 3" stroke="#1f1f1f" />
           <XAxis
             dataKey="year"
-            tick={{ fill: "#64748b", fontSize: 11 }}
-            axisLine={{ stroke: "#334155" }}
+            tick={{ fill: "#52525b", fontSize: 11 }}
+            axisLine={{ stroke: "#1f1f1f" }}
             tickLine={false}
           />
           <YAxis
-            tick={{ fill: "#64748b", fontSize: 11 }}
+            tick={{ fill: "#52525b", fontSize: 11 }}
             axisLine={false}
             tickLine={false}
           />
           <Tooltip
             contentStyle={{
-              backgroundColor: "#1e293b",
-              border: "1px solid #334155",
+              backgroundColor: "#1a1a1a",
+              border: "1px solid #262626",
               borderRadius: "8px",
               fontSize: "12px",
-              color: "#e2e8f0",
+              color: "#fafafa",
             }}
           />
           <Legend
-            wrapperStyle={{ fontSize: "11px", color: "#94a3b8" }}
+            wrapperStyle={{ fontSize: "11px", color: "#71717a" }}
           />
-          <ReferenceLine y={100} stroke="#334155" strokeDasharray="4 4" />
+          <ReferenceLine y={100} stroke="#262626" strokeDasharray="4 4" />
           <Line
             type="monotone"
             dataKey="emissions"

@@ -12,7 +12,7 @@ import type { GlobeLocation } from "@/lib/agents/globe";
 const MapboxGlobe = dynamic(() => import("@/components/map/MapboxGlobe"), {
   ssr: false,
   loading: () => (
-    <div className="w-full h-full flex items-center justify-center bg-slate-900 rounded-xl">
+    <div className="w-full h-full flex items-center justify-center bg-[#0a0a0a] rounded-xl">
       <div className="w-8 h-8 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin" />
     </div>
   ),
@@ -103,13 +103,13 @@ export default function SimulatePage() {
   return (
     <div className="flex h-screen overflow-hidden">
       {/* Left panel: form */}
-      <div className="w-72 flex-shrink-0 border-r border-slate-800 overflow-y-auto p-5">
+      <div className="w-72 flex-shrink-0 border-r border-zinc-800 overflow-y-auto p-5">
         <div className="mb-5">
           <h1 className="text-base font-semibold text-white flex items-center gap-2">
             <FlaskConical size={16} className="text-emerald-400" />
             Policy Simulator
           </h1>
-          <p className="text-xs text-slate-500 mt-0.5">
+          <p className="text-xs text-zinc-500 mt-0.5">
             Model policy lever impact on climate targets and see global effects on the map.
           </p>
         </div>
@@ -118,7 +118,7 @@ export default function SimulatePage() {
         {/* Location list under form */}
         {locations.length > 0 && (
           <div className="mt-5">
-            <div className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2 flex items-center gap-1.5">
+            <div className="text-xs font-semibold text-zinc-500 uppercase tracking-wide mb-2 flex items-center gap-1.5">
               <Globe size={11} />
               Affected Locations
             </div>
@@ -129,8 +129,8 @@ export default function SimulatePage() {
                   onClick={() => setSelectedLocation(loc)}
                   className={`w-full text-left flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-xs transition-colors ${
                     selectedLocation?.id === loc.id
-                      ? "bg-slate-700 text-white"
-                      : "text-slate-400 hover:text-white hover:bg-slate-800"
+                      ? "bg-zinc-800 text-white"
+                      : "text-zinc-400 hover:text-white hover:bg-zinc-900"
                   }`}
                 >
                   <div
@@ -156,11 +156,11 @@ export default function SimulatePage() {
         {!result && !loading && !error ? (
           <div className="flex-1 flex items-center justify-center text-center">
             <div>
-              <div className="w-14 h-14 bg-emerald-500/10 border border-emerald-500/20 rounded-2xl flex items-center justify-center mb-4 mx-auto">
+              <div className="w-14 h-14 bg-zinc-900 border border-zinc-800 rounded-2xl flex items-center justify-center mb-4 mx-auto">
                 <FlaskConical size={24} className="text-emerald-400" />
               </div>
               <h2 className="text-base font-semibold text-white mb-1">Run a simulation</h2>
-              <p className="text-sm text-slate-500 max-w-xs">
+              <p className="text-sm text-zinc-500 max-w-xs">
                 Select a target, choose a policy lever, and see the projected impact — with affected locations shown on a globe.
               </p>
             </div>
@@ -169,26 +169,26 @@ export default function SimulatePage() {
           <div className="flex-1 flex items-center justify-center">
             <div className="text-center">
               <div className="w-10 h-10 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin mx-auto mb-3" />
-              <p className="text-sm text-slate-400">Running simulation...</p>
+              <p className="text-sm text-zinc-400">Running simulation...</p>
             </div>
           </div>
         ) : error ? (
           <div className="p-5">
-            <div className="bg-red-500/10 border border-red-500/30 rounded-xl p-4 text-sm text-red-400">
+            <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-4 text-sm text-red-400">
               {error}
             </div>
           </div>
         ) : result ? (
           <div className="flex-1 relative min-h-0">
             {/* Header bar */}
-            <div className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between px-4 py-2.5 bg-slate-950/80 backdrop-blur-sm border-b border-slate-800">
+            <div className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between px-4 py-2.5 bg-[#0a0a0a]/90 backdrop-blur-sm border-b border-zinc-800">
               <div className="flex items-center gap-2">
                 <Globe size={13} className="text-emerald-400" />
                 <span className="text-xs font-semibold text-white">Global Impact</span>
-                <span className="text-xs text-slate-500">— {result.target.label}</span>
+                <span className="text-xs text-zinc-500">— {result.target.label}</span>
               </div>
               {locationsLoading && (
-                <div className="flex items-center gap-1.5 text-xs text-slate-500">
+                <div className="flex items-center gap-1.5 text-xs text-zinc-500">
                   <div className="w-3 h-3 border border-emerald-500 border-t-transparent rounded-full animate-spin" />
                   Mapping locations...
                 </div>

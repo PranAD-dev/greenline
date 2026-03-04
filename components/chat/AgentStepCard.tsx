@@ -41,10 +41,10 @@ export default function AgentStepCard({ step, status, data }: AgentStepCardProps
     <div
       className={cn(
         "border rounded-lg overflow-hidden transition-colors",
-        status === "running" && "border-emerald-500/40 bg-emerald-500/5",
-        status === "done" && "border-slate-700 bg-slate-800/50",
-        status === "pending" && "border-slate-700/50 bg-slate-800/30 opacity-50",
-        status === "error" && "border-red-500/40 bg-red-500/5"
+        status === "running" && "border-zinc-600 bg-zinc-900",
+        status === "done" && "border-zinc-800 bg-[#141414]",
+        status === "pending" && "border-zinc-800 bg-[#141414] opacity-40",
+        status === "error" && "border-red-900 bg-[#141414]"
       )}
     >
       <button
@@ -61,7 +61,7 @@ export default function AgentStepCard({ step, status, data }: AgentStepCardProps
             <CheckCircle2 size={16} className="text-emerald-400" />
           )}
           {status === "pending" && (
-            <div className="w-4 h-4 rounded-full border-2 border-slate-600" />
+            <div className="w-4 h-4 rounded-full border-2 border-zinc-700" />
           )}
           {status === "error" && (
             <AlertCircle size={16} className="text-red-400" />
@@ -72,12 +72,12 @@ export default function AgentStepCard({ step, status, data }: AgentStepCardProps
         <span className="text-base flex-shrink-0">{String(meta.icon)}</span>
         <div className="flex-1 min-w-0">
           <div className="text-sm font-medium text-white">{meta.label}</div>
-          <div className="text-xs text-slate-500 truncate">{meta.description}</div>
+          <div className="text-xs text-zinc-500 truncate">{meta.description}</div>
         </div>
 
         {/* Expand toggle */}
         {status === "done" && data != null && (
-          <div className="text-slate-500 flex-shrink-0">
+          <div className="text-zinc-500 flex-shrink-0">
             {expanded ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
           </div>
         )}
@@ -85,7 +85,7 @@ export default function AgentStepCard({ step, status, data }: AgentStepCardProps
 
       {/* Expanded data */}
       {expanded && data != null && (
-        <div className="px-4 pb-4 border-t border-slate-700/50">
+        <div className="px-4 pb-4 border-t border-zinc-800">
           <div className="mt-3">
             {step === "triage" && (
               <TriageData data={data as TriageResultData} />
@@ -115,22 +115,22 @@ function TriageData({ data }: { data: TriageResultData }) {
   return (
     <div className="space-y-2 text-xs">
       <div className="grid grid-cols-2 gap-2">
-        <div className="bg-slate-700/50 rounded p-2">
-          <div className="text-slate-500 mb-1">Category</div>
+        <div className="bg-zinc-800 rounded p-2">
+          <div className="text-zinc-500 mb-1">Category</div>
           <div className="text-white font-medium capitalize">{data.category.replace("-", " ")}</div>
         </div>
-        <div className="bg-slate-700/50 rounded p-2">
-          <div className="text-slate-500 mb-1">Urgency</div>
+        <div className="bg-zinc-800 rounded p-2">
+          <div className="text-zinc-500 mb-1">Urgency</div>
           <div className="text-white font-medium">{data.urgency}/5</div>
         </div>
       </div>
-      <div className="bg-slate-700/50 rounded p-2">
-        <div className="text-slate-500 mb-1">Assigned to</div>
+      <div className="bg-zinc-800 rounded p-2">
+        <div className="text-zinc-500 mb-1">Assigned to</div>
         <div className="text-white">{data.department}</div>
       </div>
-      <div className="bg-slate-700/50 rounded p-2">
-        <div className="text-slate-500 mb-1">Reasoning</div>
-        <div className="text-slate-300">{data.reasoning}</div>
+      <div className="bg-zinc-800 rounded p-2">
+        <div className="text-zinc-500 mb-1">Reasoning</div>
+        <div className="text-zinc-300">{data.reasoning}</div>
       </div>
     </div>
   );
@@ -160,17 +160,17 @@ function PolicyData({ data }: { data: PolicyResultData }) {
   return (
     <div className="space-y-2 text-xs">
       {data.clauses.map((c) => (
-        <div key={c.id} className="bg-slate-700/50 rounded p-2.5">
+        <div key={c.id} className="bg-zinc-800 rounded p-2.5">
           <div className="flex items-center gap-2 mb-1">
             <span className="text-emerald-400 font-medium">{c.authority}</span>
           </div>
           <div className="text-white font-medium mb-1">{c.title}</div>
-          <div className="text-slate-400 leading-relaxed line-clamp-3">{c.text}</div>
+          <div className="text-zinc-400 leading-relaxed line-clamp-3">{c.text}</div>
         </div>
       ))}
       {data.applicable_targets.map((t) => (
-        <div key={t.label} className="bg-slate-700/50 rounded p-2 flex justify-between items-center">
-          <span className="text-slate-300">{t.label}</span>
+        <div key={t.label} className="bg-zinc-800 rounded p-2 flex justify-between items-center">
+          <span className="text-zinc-300">{t.label}</span>
           <span className="text-emerald-400 font-medium">
             {t.currentValue}/{t.targetValue} {t.unit.split(" ")[0]} by {t.deadline}
           </span>
@@ -195,10 +195,10 @@ function EvidenceData({ data }: { data: EvidenceResultData }) {
   return (
     <div className="space-y-2 text-xs">
       {data.data_points.map((dp, i) => (
-        <div key={i} className="bg-slate-700/50 rounded p-2.5">
-          <div className="text-slate-500 mb-0.5">{dp.source} · {dp.date}</div>
+        <div key={i} className="bg-zinc-800 rounded p-2.5">
+          <div className="text-zinc-500 mb-0.5">{dp.source} · {dp.date}</div>
           <div className="text-white font-medium">{dp.value}</div>
-          <div className="text-slate-500 mt-0.5">{dp.relevance}</div>
+          <div className="text-zinc-500 mt-0.5">{dp.relevance}</div>
         </div>
       ))}
     </div>

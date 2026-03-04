@@ -109,13 +109,13 @@ export default function ChatPage() {
   return (
     <div className="flex h-screen overflow-hidden">
       {/* Left panel: input */}
-      <div className="w-96 flex-shrink-0 border-r border-slate-800 flex flex-col">
-        <div className="px-5 py-4 border-b border-slate-800">
+      <div className="w-96 flex-shrink-0 border-r border-zinc-800 flex flex-col">
+        <div className="px-5 py-4 border-b border-zinc-800">
           <h1 className="text-base font-semibold text-white flex items-center gap-2">
             <Zap size={16} className="text-emerald-400" />
             Agent Chat
           </h1>
-          <p className="text-xs text-slate-500 mt-0.5">
+          <p className="text-xs text-zinc-500 mt-0.5">
             Submit a citizen report or staff query — the AI will triage, look up policy, gather evidence, and recommend action.
           </p>
         </div>
@@ -123,7 +123,7 @@ export default function ChatPage() {
         <div className="flex-1 overflow-y-auto p-4 space-y-3">
           {/* Textarea */}
           <div>
-            <label className="block text-xs font-medium text-slate-400 mb-1.5">
+            <label className="block text-xs font-medium text-zinc-400 mb-1.5">
               Report or Query
             </label>
             <textarea
@@ -132,12 +132,12 @@ export default function ChatPage() {
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Describe the issue or question..."
               rows={6}
-              className="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-emerald-500/50 resize-none"
+              className="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-3 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-emerald-500/50 resize-none"
               onKeyDown={(e) => {
                 if (e.key === "Enter" && e.metaKey) handleSubmit();
               }}
             />
-            <p className="text-xs text-slate-600 mt-1">⌘ + Enter to submit</p>
+            <p className="text-xs text-zinc-600 mt-1">⌘ + Enter to submit</p>
           </div>
 
           <button
@@ -162,7 +162,7 @@ export default function ChatPage() {
           {result && (
             <button
               onClick={() => { resetState(); setQuery(""); }}
-              className="w-full flex items-center justify-center gap-1.5 text-slate-500 hover:text-slate-300 text-xs py-1.5 transition-colors"
+              className="w-full flex items-center justify-center gap-1.5 text-zinc-500 hover:text-zinc-300 text-xs py-1.5 transition-colors"
             >
               <RefreshCw size={12} />
               New case
@@ -171,14 +171,14 @@ export default function ChatPage() {
 
           {/* Example queries */}
           <div>
-            <div className="text-xs text-slate-600 mb-2">Example reports:</div>
+            <div className="text-xs text-zinc-600 mb-2">Example reports:</div>
             <div className="space-y-1.5">
               {EXAMPLE_QUERIES.map((q, i) => (
                 <button
                   key={i}
                   onClick={() => { setQuery(q); handleSubmit(q); }}
                   disabled={loading}
-                  className="w-full text-left text-xs text-slate-500 hover:text-slate-300 bg-slate-800/50 hover:bg-slate-800 border border-slate-700/50 rounded-lg px-3 py-2 transition-colors line-clamp-2"
+                  className="w-full text-left text-xs text-zinc-500 hover:text-zinc-300 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 rounded-lg px-3 py-2 transition-colors line-clamp-2"
                 >
                   {q}
                 </button>
@@ -192,11 +192,11 @@ export default function ChatPage() {
       <div className="flex-1 overflow-y-auto p-5 space-y-4">
         {steps.length === 0 && !result && (
           <div className="flex flex-col items-center justify-center h-full text-center">
-            <div className="w-14 h-14 bg-emerald-500/10 border border-emerald-500/20 rounded-2xl flex items-center justify-center mb-4">
+            <div className="w-14 h-14 bg-zinc-900 border border-zinc-800 rounded-2xl flex items-center justify-center mb-4">
               <Zap size={24} className="text-emerald-400" />
             </div>
             <h2 className="text-base font-semibold text-white mb-1">Ready to analyze</h2>
-            <p className="text-sm text-slate-500 max-w-xs">
+            <p className="text-sm text-zinc-500 max-w-xs">
               Submit a citizen report or staff query to run the full AI agent pipeline — triage, policy lookup, evidence gathering, and action planning.
             </p>
           </div>
@@ -204,7 +204,7 @@ export default function ChatPage() {
 
         {steps.length > 0 && (
           <div>
-            <div className="text-xs font-medium text-slate-500 uppercase tracking-wide mb-3">
+            <div className="text-xs font-medium text-zinc-500 uppercase tracking-wide mb-3">
               Agent Pipeline
             </div>
             <div className="space-y-2">
@@ -221,14 +221,14 @@ export default function ChatPage() {
         )}
 
         {error && (
-          <div className="bg-red-500/10 border border-red-500/30 rounded-xl p-4 text-sm text-red-400">
+          <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-4 text-sm text-red-400">
             Error: {error}
           </div>
         )}
 
         {result && (
           <div className="mt-2">
-            <div className="text-xs font-medium text-slate-500 uppercase tracking-wide mb-3">
+            <div className="text-xs font-medium text-zinc-500 uppercase tracking-wide mb-3">
               Recommendation
             </div>
             <ActionResult

@@ -21,18 +21,18 @@ interface CategoryChartProps {
 
 export default function CategoryChart({ data }: CategoryChartProps) {
   return (
-    <div className="bg-slate-800 border border-slate-700 rounded-xl p-5">
+    <div className="bg-[#141414] border border-zinc-800 rounded-xl p-5">
       <div className="mb-4">
-        <h3 className="text-sm font-semibold text-white">Target Progress by Category</h3>
-        <p className="text-xs text-slate-500 mt-0.5">% of target achieved as of today</p>
+        <h3 className="text-sm font-medium text-white">Target Progress by Category</h3>
+        <p className="text-xs text-zinc-500 mt-0.5">% of target achieved as of today</p>
       </div>
       <ResponsiveContainer width="100%" height={220}>
         <BarChart data={data} layout="vertical" margin={{ top: 0, right: 30, left: 0, bottom: 0 }}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#334155" horizontal={false} />
+          <CartesianGrid strokeDasharray="3 3" stroke="#1f1f1f" horizontal={false} />
           <XAxis
             type="number"
             domain={[0, 100]}
-            tick={{ fill: "#64748b", fontSize: 11 }}
+            tick={{ fill: "#52525b", fontSize: 11 }}
             axisLine={false}
             tickLine={false}
             tickFormatter={(v) => `${v}%`}
@@ -40,18 +40,18 @@ export default function CategoryChart({ data }: CategoryChartProps) {
           <YAxis
             type="category"
             dataKey="name"
-            tick={{ fill: "#94a3b8", fontSize: 11 }}
+            tick={{ fill: "#71717a", fontSize: 11 }}
             axisLine={false}
             tickLine={false}
             width={100}
           />
           <Tooltip
             contentStyle={{
-              backgroundColor: "#1e293b",
-              border: "1px solid #334155",
+              backgroundColor: "#1a1a1a",
+              border: "1px solid #262626",
               borderRadius: "8px",
               fontSize: "12px",
-              color: "#e2e8f0",
+              color: "#fafafa",
             }}
             formatter={(value) => [`${value ?? 0}%`, "Progress"]}
           />

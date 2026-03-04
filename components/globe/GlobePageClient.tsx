@@ -13,7 +13,7 @@ const GlobeView = dynamic(() => import("@/components/map/MapboxGlobe"), {
     <div className="w-full h-full flex items-center justify-center">
       <div className="text-center">
         <div className="w-12 h-12 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin mx-auto mb-3" />
-        <p className="text-sm text-slate-400">Loading map...</p>
+        <p className="text-sm text-zinc-500">Loading map...</p>
       </div>
     </div>
   ),
@@ -56,18 +56,18 @@ export default function GlobePageClient() {
   return (
     <div className="flex h-screen overflow-hidden relative">
       {/* Left panel */}
-      <div className="w-80 flex-shrink-0 border-r border-slate-800 overflow-y-auto p-5 flex flex-col z-10 bg-slate-950">
+      <div className="w-80 flex-shrink-0 border-r border-zinc-800 overflow-y-auto p-5 flex flex-col z-10 bg-[#0f0f0f]">
         <PolicyDropzone onAnalyze={handleAnalyze} loading={loading} />
 
         {error && (
-          <div className="mt-3 bg-red-500/10 border border-red-500/30 rounded-xl p-3 text-xs text-red-400">
+          <div className="mt-3 bg-zinc-900 border border-zinc-700 rounded-xl p-3 text-xs text-red-400">
             {error}
           </div>
         )}
 
         {hasAnalyzed && !loading && (
           <div className="mt-3 space-y-1">
-            <p className="text-xs text-slate-500 mb-2 font-medium">
+            <p className="text-xs text-zinc-500 mb-2 font-medium">
               {locations.length} locations identified — click a marker to explore
             </p>
             {locations.map((loc) => (
@@ -76,8 +76,8 @@ export default function GlobePageClient() {
                 onClick={() => setSelected(loc)}
                 className={`w-full text-left flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs transition-colors ${
                   selected?.id === loc.id
-                    ? "bg-slate-700 text-white"
-                    : "text-slate-400 hover:text-slate-200 hover:bg-slate-800/50"
+                    ? "bg-zinc-800 text-white"
+                    : "text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900"
                 }`}
               >
                 <div
@@ -87,7 +87,7 @@ export default function GlobePageClient() {
                       loc.impactType === "positive" ? "#10b981"
                       : loc.impactType === "negative" ? "#ef4444"
                       : loc.impactType === "mixed" ? "#f59e0b"
-                      : "#64748b",
+                      : "#52525b",
                   }}
                 />
                 <span className="truncate">{loc.name}</span>
@@ -98,17 +98,17 @@ export default function GlobePageClient() {
       </div>
 
       {/* Globe area */}
-      <div className="flex-1 relative bg-slate-950">
+      <div className="flex-1 relative bg-[#0a0a0a]">
         {!hasAnalyzed && !loading ? (
           // Empty state
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-8">
-            <div className="w-20 h-20 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-5">
-              <svg className="w-9 h-9 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="w-20 h-20 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center mb-5">
+              <svg className="w-9 h-9 text-zinc-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
             <h2 className="text-lg font-semibold text-white mb-2">Visualize Policy Impact</h2>
-            <p className="text-sm text-slate-500 max-w-xs">
+            <p className="text-sm text-zinc-500 max-w-xs">
               Upload or paste a policy document on the left. Claude will identify every city and region it affects — and explain exactly how.
             </p>
             <div className="mt-6 grid grid-cols-3 gap-3 text-center max-w-sm">
@@ -117,10 +117,10 @@ export default function GlobePageClient() {
                 { color: "#f59e0b", label: "Mixed", desc: "Trade-offs exist" },
                 { color: "#ef4444", label: "Negative", desc: "Adverse effects" },
               ].map((item) => (
-                <div key={item.label} className="bg-slate-800/50 rounded-xl p-3 border border-slate-700/50">
+                <div key={item.label} className="bg-zinc-900 rounded-xl p-3 border border-zinc-800">
                   <div className="w-3 h-3 rounded-full mx-auto mb-1.5" style={{ backgroundColor: item.color }} />
                   <div className="text-xs font-medium text-white">{item.label}</div>
-                  <div className="text-[10px] text-slate-500 mt-0.5">{item.desc}</div>
+                  <div className="text-[10px] text-zinc-500 mt-0.5">{item.desc}</div>
                 </div>
               ))}
             </div>

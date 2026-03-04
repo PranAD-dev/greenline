@@ -32,17 +32,17 @@ export default function SimulateForm({ targets, onSimulate, loading }: SimulateF
   }
 
   return (
-    <form onSubmit={handleSubmit} className="bg-slate-800 border border-slate-700 rounded-xl p-5 space-y-5">
+    <form onSubmit={handleSubmit} className="bg-[#141414] border border-zinc-800 rounded-xl p-5 space-y-5">
       <div>
         <h2 className="text-base font-semibold text-white">Policy Simulation</h2>
-        <p className="text-sm text-slate-500 mt-0.5">
+        <p className="text-sm text-zinc-500 mt-0.5">
           Model the impact of a policy lever change on a specific target
         </p>
       </div>
 
       {/* Target selection */}
       <div>
-        <label className="block text-xs font-medium text-slate-400 mb-1.5">Target</label>
+        <label className="block text-xs font-medium text-zinc-500 mb-1.5">Target</label>
         <div className="grid grid-cols-2 gap-2">
           {targets.map((t) => (
             <button
@@ -51,8 +51,8 @@ export default function SimulateForm({ targets, onSimulate, loading }: SimulateF
               onClick={() => { setTargetId(t.id); setLever(""); }}
               className={`text-left px-3 py-2.5 rounded-lg border text-sm transition-colors ${
                 targetId === t.id
-                  ? "border-emerald-500/50 bg-emerald-500/10 text-white"
-                  : "border-slate-700 bg-slate-800 text-slate-400 hover:border-slate-600"
+                  ? "border-zinc-600 bg-zinc-800 text-white"
+                  : "border-zinc-800 bg-zinc-900 text-zinc-400 hover:border-zinc-700 hover:text-zinc-200"
               }`}
             >
               <span className="mr-1.5">{getCategoryIcon(t.category)}</span>
@@ -64,11 +64,11 @@ export default function SimulateForm({ targets, onSimulate, loading }: SimulateF
 
       {/* Lever */}
       <div>
-        <label className="block text-xs font-medium text-slate-400 mb-1.5">Policy Lever</label>
+        <label className="block text-xs font-medium text-zinc-500 mb-1.5">Policy Lever</label>
         <select
           value={currentLever}
           onChange={(e) => setLever(e.target.value)}
-          className="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-500/50"
+          className="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-zinc-600"
         >
           {levers.map((l) => (
             <option key={l} value={l}>{l.replace("X%", `${changePct}%`)}</option>
@@ -78,7 +78,7 @@ export default function SimulateForm({ targets, onSimulate, loading }: SimulateF
 
       {/* Change % */}
       <div>
-        <label className="block text-xs font-medium text-slate-400 mb-1.5">
+        <label className="block text-xs font-medium text-zinc-500 mb-1.5">
           Change Magnitude: <span className="text-emerald-400 font-semibold">+{changePct}%</span>
         </label>
         <input
@@ -90,7 +90,7 @@ export default function SimulateForm({ targets, onSimulate, loading }: SimulateF
           onChange={(e) => setChangePct(Number(e.target.value))}
           className="w-full accent-emerald-500"
         />
-        <div className="flex justify-between text-xs text-slate-600 mt-0.5">
+        <div className="flex justify-between text-xs text-zinc-600 mt-0.5">
           <span>+5%</span>
           <span>+50%</span>
           <span>+100%</span>
