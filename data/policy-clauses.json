@@ -1,0 +1,164 @@
+[
+  {
+    "id": "clause-001",
+    "target_id": "emissions-reduction",
+    "category": "emissions",
+    "title": "Citywide Carbon Neutrality Commitment",
+    "text": "Section 2.1: The City commits to achieving a 50% reduction in net greenhouse gas emissions by 2035, measured against the 2020 baseline inventory of 4.2 million metric tons CO2e. This includes Scope 1 (direct) and Scope 2 (purchased energy) emissions from all city operations and community-wide sources.",
+    "keywords": ["emissions", "carbon", "greenhouse gas", "CO2", "baseline", "reduction"],
+    "authority": "Climate Action Plan 2022, §2.1"
+  },
+  {
+    "id": "clause-002",
+    "target_id": "emissions-reduction",
+    "category": "emissions",
+    "title": "Industrial Emissions Compliance",
+    "text": "Section 2.4: All major point-source emitters (facilities emitting >10,000 MT CO2e/year) must submit annual emissions inventories and implement verified reduction plans. The Office of Climate Action shall publish quarterly progress reports. Non-compliance triggers a formal improvement notice and potential permit review.",
+    "keywords": ["industrial", "compliance", "permit", "inventory", "major emitters"],
+    "authority": "Climate Action Plan 2022, §2.4"
+  },
+  {
+    "id": "clause-003",
+    "target_id": "emissions-reduction",
+    "category": "emissions",
+    "title": "Construction Site Emissions Standards",
+    "text": "Section 2.7: All city-permitted construction projects exceeding $5M in contract value must submit a Construction Emissions Management Plan (CEMP) demonstrating use of Tier 4 diesel equipment or electric alternatives. Diesel idling beyond 5 minutes is prohibited within 500 feet of residential zones or schools.",
+    "keywords": ["construction", "diesel", "idling", "equipment", "CEMP", "site emissions"],
+    "authority": "Climate Action Plan 2022, §2.7"
+  },
+  {
+    "id": "clause-004",
+    "target_id": "renewable-energy",
+    "category": "energy",
+    "title": "Renewable Portfolio Standard",
+    "text": "Section 4.1: The City's municipal utility shall procure electricity from renewable sources at increasing thresholds: 70% by 2026, 85% by 2030, and 100% by 2040. Renewable energy certificates (RECs) must be retired in-state. Community solar programs shall reserve 30% of capacity for income-qualified residents.",
+    "keywords": ["renewable", "portfolio", "solar", "wind", "REC", "clean energy", "utility"],
+    "authority": "Climate Action Plan 2022, §4.1"
+  },
+  {
+    "id": "clause-005",
+    "target_id": "renewable-energy",
+    "category": "energy",
+    "title": "Municipal Buildings Net-Zero Energy",
+    "text": "Section 4.3: All new municipal buildings shall achieve net-zero energy status. Existing municipal buildings exceeding 50,000 sq ft must reach net-zero energy by 2032. The Department of Energy & Environment will provide technical assistance and co-invest up to 40% of retrofit costs for buildings serving critical community functions.",
+    "keywords": ["municipal buildings", "net-zero", "energy efficiency", "retrofit"],
+    "authority": "Climate Action Plan 2022, §4.3"
+  },
+  {
+    "id": "clause-006",
+    "target_id": "tree-canopy",
+    "category": "green-infrastructure",
+    "title": "Urban Forestry Expansion Program",
+    "text": "Section 6.1: Urban Forestry shall plant no fewer than 5,000 trees annually in public right-of-way, parks, and city-owned properties. Priority planting areas include neighborhoods below 15% canopy coverage. The City shall maintain an updated tree inventory using LiDAR mapping on a biennial basis.",
+    "keywords": ["trees", "planting", "urban forestry", "canopy", "right-of-way", "parks"],
+    "authority": "Climate Action Plan 2022, §6.1"
+  },
+  {
+    "id": "clause-007",
+    "target_id": "tree-canopy",
+    "category": "green-infrastructure",
+    "title": "Tree Protection Ordinance",
+    "text": "Section 6.3: Any removal of a protected tree (DBH ≥ 6 inches) requires a permit from Urban Forestry. Developers who remove protected trees must plant replacement trees at a 3:1 ratio within the project parcel or contribute to the Tree Canopy Fund at $250 per caliper inch removed. Emergency removals must be reported within 48 hours.",
+    "keywords": ["tree removal", "permit", "replacement", "DBH", "canopy fund", "protected trees"],
+    "authority": "Climate Action Plan 2022, §6.3"
+  },
+  {
+    "id": "clause-008",
+    "target_id": "tree-canopy",
+    "category": "green-infrastructure",
+    "title": "Green Infrastructure Standards for Development",
+    "text": "Section 6.5: New developments exceeding 20,000 sq ft of impervious surface must incorporate green stormwater infrastructure managing the first 1.5 inches of rainfall on-site. Acceptable practices include bioretention, permeable pavement, and green roofs. Urban heat island mitigation plans are required for projects in HVI Zones 4-5.",
+    "keywords": ["stormwater", "green roof", "bioretention", "heat island", "development", "permeable"],
+    "authority": "Climate Action Plan 2022, §6.5"
+  },
+  {
+    "id": "clause-009",
+    "target_id": "ev-adoption",
+    "category": "transport",
+    "title": "EV Charging Infrastructure Mandate",
+    "text": "Section 5.2: New commercial parking facilities with >50 spaces and multi-unit residential buildings with >20 units must install EV-ready conduit in 20% of spaces, with Level 2 charging in 10% of spaces. The City shall deploy 500 public Level 2 chargers and 50 DC fast-chargers by 2027, prioritizing transit corridors and underserved neighborhoods.",
+    "keywords": ["EV", "charging", "electric vehicle", "Level 2", "DC fast charger", "parking"],
+    "authority": "Climate Action Plan 2022, §5.2"
+  },
+  {
+    "id": "clause-010",
+    "target_id": "ev-adoption",
+    "category": "transport",
+    "title": "Municipal Fleet Electrification",
+    "text": "Section 5.4: The City shall electrify 50% of its light-duty fleet by 2027 and 100% by 2032. Heavy-duty vehicles (refuse trucks, transit buses) shall transition to zero-emission by 2035. Fleet electrification purchases shall prioritize domestically manufactured vehicles. Annual fleet emissions reports shall be published by April 30.",
+    "keywords": ["fleet", "municipal vehicles", "electric", "transit", "refuse", "buses"],
+    "authority": "Climate Action Plan 2022, §5.4"
+  },
+  {
+    "id": "clause-011",
+    "target_id": "building-retrofits",
+    "category": "buildings",
+    "title": "Existing Building Performance Standards",
+    "text": "Section 3.1: Commercial and multifamily buildings exceeding 25,000 sq ft must benchmark annual energy use via EPA Portfolio Manager and report to the City. Buildings in the bottom quartile of energy performance must achieve a 15% efficiency improvement within 3 years of notification. The Building Performance Standard escalates: 10% reduction by 2027, 25% by 2030, 40% by 2033.",
+    "keywords": ["benchmarking", "energy performance", "commercial buildings", "multifamily", "efficiency"],
+    "authority": "Climate Action Plan 2022, §3.1"
+  },
+  {
+    "id": "clause-012",
+    "target_id": "building-retrofits",
+    "category": "buildings",
+    "title": "Residential Retrofit Incentive Program",
+    "text": "Section 3.4: The City administers a Residential Climate Retrofit Fund offering grants of up to $8,000 for income-qualified homeowners and low-interest loans for market-rate households. Eligible improvements include air sealing, insulation, heat pump HVAC, heat pump water heaters, and weatherization. The Fund targets 1,200 homes annually.",
+    "keywords": ["residential", "retrofit", "incentive", "heat pump", "insulation", "weatherization", "grant"],
+    "authority": "Climate Action Plan 2022, §3.4"
+  },
+  {
+    "id": "clause-013",
+    "target_id": "waste-diversion",
+    "category": "waste",
+    "title": "Zero Waste 2032 Strategy",
+    "text": "Section 7.1: The City adopts a Zero Waste 2032 Strategy targeting 90% diversion of municipal solid waste from landfill. Key strategies include mandatory organics collection for commercial generators (>2 cubic yards/week) by 2025, expanded curbside composting citywide by 2026, and textile and mattress recycling at all transfer stations.",
+    "keywords": ["zero waste", "diversion", "composting", "organics", "recycling", "landfill"],
+    "authority": "Climate Action Plan 2022, §7.1"
+  },
+  {
+    "id": "clause-014",
+    "target_id": "waste-diversion",
+    "category": "waste",
+    "title": "Single-Use Plastics Reduction",
+    "text": "Section 7.3: The City prohibits distribution of single-use polystyrene food service ware, non-recyclable plastic bags, and disposable plastic straws at food establishments effective 2024. Retailers must offer reusable bag purchase options. The Office of Sustainability shall launch a 'Refill & Reuse' pilot with 20 restaurants by 2025.",
+    "keywords": ["plastic", "polystyrene", "single-use", "bags", "straws", "reuse", "food service"],
+    "authority": "Climate Action Plan 2022, §7.3"
+  },
+  {
+    "id": "clause-015",
+    "target_id": "bike-infrastructure",
+    "category": "transport",
+    "title": "Protected Bicycle Network Buildout",
+    "text": "Section 5.6: The Department of Transportation shall complete 200 miles of protected bicycle infrastructure by 2031, following the Bicycle Master Plan network map. Protected lanes are defined as physically separated from vehicular traffic by a vertical barrier, parked cars, or painted buffer of at least 3 feet. Annual lane-miles added shall be reported in the Active Transportation Dashboard.",
+    "keywords": ["bike lanes", "protected", "cycling", "bicycle", "infrastructure", "transportation"],
+    "authority": "Climate Action Plan 2022, §5.6"
+  },
+  {
+    "id": "clause-016",
+    "target_id": "bike-infrastructure",
+    "category": "transport",
+    "title": "Safe Streets & Vision Zero Integration",
+    "text": "Section 5.8: All bicycle infrastructure investments shall align with Vision Zero principles to eliminate traffic fatalities by 2030. High-injury corridors identified in the Vision Zero Action Plan must receive traffic calming or protected lanes as part of the next scheduled resurfacing or major capital project. Pedestrian and cyclist injury data shall be updated quarterly.",
+    "keywords": ["Vision Zero", "safe streets", "traffic fatalities", "pedestrian", "cyclist safety"],
+    "authority": "Climate Action Plan 2022, §5.8"
+  },
+  {
+    "id": "clause-017",
+    "target_id": "solar-installation",
+    "category": "energy",
+    "title": "Rooftop Solar Expansion Program",
+    "text": "Section 4.5: The City shall incentivize installation of 500 MW of rooftop solar capacity by 2034 through property tax exemptions for solar installations, streamlined permitting (15-day approval for residential <10 kW), and low-interest solar financing through the Green Bank. At least 100 MW shall serve low-to-moderate income households via community solar programs.",
+    "keywords": ["rooftop solar", "photovoltaic", "incentive", "permitting", "community solar", "LMI"],
+    "authority": "Climate Action Plan 2022, §4.5"
+  },
+  {
+    "id": "clause-018",
+    "target_id": "solar-installation",
+    "category": "energy",
+    "title": "Solar-Ready Building Standards",
+    "text": "Section 4.7: All new single-family and low-rise residential construction must be solar-ready, with electrical panel capacity of at least 200 amps, roof orientation within 45° of south, and conduit from attic to main panel. New flat-roof commercial buildings over 10,000 sq ft must install solar or demonstrate structural and electrical readiness.",
+    "keywords": ["solar ready", "new construction", "building standards", "residential", "commercial"],
+    "authority": "Climate Action Plan 2022, §4.7"
+  }
+]
